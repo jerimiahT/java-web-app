@@ -12,15 +12,4 @@ resource "aws_instance" "web" {
   }
 }
 
-data "aws_instance" "web" {
-   filter {
-    name   = "tag:Name"
-    values = ["web"]
-  }
-}
-
-output "instanceid" {
-    value = data.aws_instance.web.availability_zone
-}
-
 
